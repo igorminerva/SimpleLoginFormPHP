@@ -9,9 +9,9 @@
 
         if(empty($username)||empty($password)||empty($email)){
             echo "Please fullfill the registretion page";
-        }else {
+        }else{
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users(username, password, email) values ('$username','$hash','$email');"
+            $sql = "INSERT INTO users(username, password, email) values ('$username','$hash','$email');";
         }
 
         
@@ -32,17 +32,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to learn php</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <label>Username:</label><br>
-        <input type="text" name="username"><br>
-        <label>Password:</label><br>
-        <input type="password" name="password"><br>
-        <label>Email:</label><br>
-        <input type="email" name="email"><br>
-        <input type="submit" name="Register" value="Register">
-    </form>
+    <div class="container">
+        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+            <label>Username:</label><br>
+            <input type="text" name="username"><br>
+            <label>Password:</label><br>
+            <input type="password" name="password"><br>
+            <label>Email:</label><br>
+            <input type="email" name="email"><br>
+            <input type="submit" name="Register" value="Register">
+        </form>
+    </div>
+    
     
 </body>
 </html>
